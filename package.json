@@ -12,12 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.4.1",
     "multer": "^2.1.1",
     "pg": "^8.20.0",
     "pg-hstore": "^2.3.4",
+    "react-multi-carousel": "^2.8.6",
     "sequelize": "^6.37.8",
     "uuid": "^13.0.0",
     "yup": "^1.7.1"
