@@ -73,6 +73,23 @@ class productController{
         return res.status(200).json();
     }
 
+    async delete(req, res) {
+        const { id } = req.params;
+
+        const product = await Product.findByPk(id);
+
+        if (!product) {
+            return res.status(404).json({
+                error: "Produto não encontrado"
+            });
+        }
+
+        await product.destroy();
+
+        return res.status(200).json({
+            message: "Produto excluído com sucesso"
+        });
+    }
 
     async index(_req, res) {
         const products = await Product.findAll({

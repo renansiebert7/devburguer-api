@@ -3,6 +3,7 @@ import UserController from "./app/models/controllers/UserController.js";
 import SessionController from "./app/models/controllers/SessionController.js";
 import ProductController from "./app/models/controllers/ProductController.js";
 import CategoryController from "./app/models/controllers/CategoryController.js";
+import CreatePaymentIntentController from "./app/models/controllers/CreatePaymentIntentController.js";
 import OrderController from "./app/models/controllers/OrderController.js";
 import multer from "multer";
 import multerConfig from "./config/multer.cjs";
@@ -21,14 +22,18 @@ GET -> BUSCAR
 DELETE -> DELETAR
 */
 
-
-
 routes.post("/users", UserController.store);
 routes.post("/sessions", SessionController.store)
+
+routes.post(
+    '/create-payment-intent',
+    CreatePaymentIntentController.store
+);
 
 routes.use(authMiddleware);
 routes.post("/products", adminMiddleware, upload.single('file'), ProductController.store); 
 routes.put("/products/:id", adminMiddleware, upload.single('file'), ProductController.update); 
+routes.delete("/products/:id", adminMiddleware, ProductController.delete);
 routes.get('/products', ProductController.index)
 
 routes.post("/categories", adminMiddleware, upload.single('file'), CategoryController.store); 
@@ -38,6 +43,5 @@ routes.get("/categories", CategoryController.index);
 routes.post("/orders", OrderController.store); 
 routes.get("/orders", OrderController.index);
 routes.put("/orders/:id", adminMiddleware, OrderController.update); 
-
 
 export default routes;
