@@ -23,7 +23,3 @@ class Database {
 }
 
 export default new Database();
-
-// TEM NUVENS ? ESTÁ NUBLADO : ESTA ENSOLARADO
-// ? - Verdadeiro 
-// : - Falso
