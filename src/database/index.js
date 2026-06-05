@@ -27,6 +27,3 @@ export default new Database();
 // TEM NUVENS ? ESTÁ NUBLADO : ESTA ENSOLARADO
 // ? - Verdadeiro 
 // : - Falso
-ljEuc3SIt8p0pFOb
-renansiebert01_db_user
-
